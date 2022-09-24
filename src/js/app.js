@@ -1,16 +1,14 @@
 import * as flsFunctions from "./modules/functions.js";
 
-flsFunctions.chefChange();
+window.addEventListener('scroll', (e) => {
+    document.body.style.cssText += `--scrollTop: ${window.scrollY}px`;
+})
 
-flsFunctions.tastyRatingChanger();
-
-flsFunctions.tastySlider();
-
-flsFunctions.bCardChange();
-
-flsFunctions.popupVisible();
-
-
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+ScrollSmoother.create({
+    wrapper: '.wrapper',
+    content: '.content'
+})
 
 
 
